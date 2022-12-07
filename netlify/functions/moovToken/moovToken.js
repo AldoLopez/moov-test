@@ -4,7 +4,6 @@ const { Moov, ALL_SCOPES } = require("@moovio/node");
 const handler = async (event) => {
   try {
     console.log('token getting');
-    console.log(process.env.MOOV_ACCOUNT);
     const moov = new Moov({
       accountID: process.env.MOOV_ACCOUNT,
       publicKey: process.env.MOOV_PUBLIC,
@@ -12,15 +11,18 @@ const handler = async (event) => {
       domain: "https://cute-starship-098086.netlify.app"
     });
 
-    console.log(process.env.PATIENT_ACCOUNT_ID);
     const accountId = process.env.PATIENT_ACCOUNT_ID;
     try {
       const { token } = await moov.generateToken(ALL_SCOPES, accountId);
+      console.log(token);
+      console.log(accountId);
       return { statusCode: 200, body: { token, accountId } };
     } catch (err) {
+      console.log('error 401');
       return { statusCode: 401, body: 'something went wrong' };
     }
   } catch (error) {
+    console.log('err 500');
     return { statusCode: 500, body: error.toString() }
   }
 }
