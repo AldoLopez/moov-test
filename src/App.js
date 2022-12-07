@@ -26,10 +26,10 @@ function App() {
   return (
     <div className="App">
       <MoovDrops
-        accountId={token.accountId}
+        accountId={token.body.accountId}
         onCancel={() => alert('canceled')}
         onSuccess={() => alert('success')}
-        token={token.token}
+        token={token.body.token}
       />
     </div>
   );
