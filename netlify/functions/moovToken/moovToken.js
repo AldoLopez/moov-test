@@ -18,7 +18,7 @@ const handler = async (event) => {
       const { token } = await moov.generateToken(ALL_SCOPES, accountId);
       return { statusCode: 200, body: { token, accountId } };
     } catch (err) {
-      return { statusCode: 401, body: err.toString() };
+      return { statusCode: 401, body: 'something went wrong' };
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
