@@ -7,7 +7,10 @@ function App() {
   const [token, setToken] = useState(null);
   const [addingPayment, setAddingPayment] = useState(false);
 
-  const add = () => setAddingPayment(true);
+  const add = () => {
+    console.log('adding');
+    setAddingPayment(true);
+  };
 
   useEffect(() => {
     const getToken = async () => {
