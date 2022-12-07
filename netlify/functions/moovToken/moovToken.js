@@ -14,7 +14,7 @@ const handler = async (event) => {
     const accountId = process.env.PATIENT_ACCOUNT_ID;
     try {
       const { token } = await moov.generateToken(ALL_SCOPES, accountId);
-      return { statusCode: 200, body: { token, accountId } });
+      return { statusCode: 200, body: { token, accountId } };
     } catch (err) {
       return { statusCode: 401 };
     }
