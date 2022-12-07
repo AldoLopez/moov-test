@@ -42,7 +42,7 @@ export const MoovDrops = ({ accountId, onCancel, onSuccess, token }) => {
       node.paymentMethodTypes = ['card'];
       node.onResourceCreated = created;
     }
-  }, [moov, moovRef, accountId, cancel, created, show]);
+  }, [moov, moovRef, accountId, cancel, created, show, token]);
 
   if (error) {
     return <div>Something went wrong</div>;
