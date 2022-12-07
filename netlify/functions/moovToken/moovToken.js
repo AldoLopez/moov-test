@@ -1,4 +1,4 @@
-const { Moov } = require("@moovio/node");
+const { Moov, ALL_SCOPES } = require("@moovio/node");
 
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const handler = async (event) => {
