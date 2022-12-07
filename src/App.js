@@ -5,6 +5,9 @@ import axios from 'axios';
 
 function App() {
   const [token, setToken] = useState(null);
+  const [addingPayment, setAddingPayment] = useState(false);
+
+  const add = () => setAddingPayment(true);
 
   useEffect(() => {
     const getToken = async () => {
@@ -25,12 +28,15 @@ function App() {
   }
   return (
     <div className="App">
-      <MoovDrops
-        accountId={token.accountId}
-        onCancel={() => alert('canceled')}
-        onSuccess={() => alert('success')}
-        token={token.token}
-      />
+      <button onClick={add}>add payment</button>
+      {addingPayment && (
+        <MoovDrops
+          accountId={token.accountId}
+          onCancel={() => alert('canceled')}
+          onSuccess={() => alert('success')}
+          token={token.token}
+        />
+      )}
     </div>
   );
 }
