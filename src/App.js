@@ -35,8 +35,8 @@ function App() {
       {addingPayment && (
         <MoovDrops
           accountId={token.accountId}
-          onCancel={() => alert('canceled')}
-          onSuccess={() => alert('success')}
+          onCancel={() => setAddingPayment(false)}
+          onSuccess={() => setAddingPayment(false)}
           token={token.token}
         />
       )}
