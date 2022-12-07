@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { MoovDrops } from './moov';
 import { useEffect, useState } from 'react';

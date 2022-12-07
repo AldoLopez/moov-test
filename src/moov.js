@@ -18,8 +18,7 @@ export const MoovDrops = ({ accountId, onCancel, onSuccess, token }) => {
       }
     };
     getMoov();
-    return () => cancel();
-  }, []);
+  }, [token]);
 
   const cancel = useCallback(() => {
     setError(null);
@@ -43,7 +42,7 @@ export const MoovDrops = ({ accountId, onCancel, onSuccess, token }) => {
       node.paymentMethodTypes = ['card'];
       node.onResourceCreated = created;
     }
-  }, [moov, moovRef, accountId]);
+  }, [moov, moovRef, accountId, cancel, created, show]);
 
   if (error) {
     return <div>Something went wrong</div>;
