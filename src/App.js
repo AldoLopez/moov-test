@@ -2,9 +2,9 @@ import React from 'react';
 import Webcam from "react-webcam";
 
 import './App.css';
-import { MoovDrops } from './moov';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import { MoovDrops } from './moov';
+import { useState } from 'react';
+// import axios from 'axios';
 
 const videoConstraints = {
   width: 1280,
