@@ -37,7 +37,7 @@ const WebcamCapture = () => {
       </Webcam>
       {images.map((b64) => {
         return (
-          <div><img alt="image you took" src={b64} /></div>
+          <div><img alt="you took this" src={b64} /></div>
         );
       })}
     </>
