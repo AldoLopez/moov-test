@@ -5,6 +5,9 @@ const handler = async (event) => {
     console.log('getting meds');
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // Allow from anywhere 
+      },
       body: JSON.stringify({
         medication: {
           active: true,
