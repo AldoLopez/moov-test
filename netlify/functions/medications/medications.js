@@ -5,12 +5,12 @@ const handler = async (event) => {
     console.log('getting meds');
     return {
       statusCode: 200,
-      body: {
+      body: JSON.stringify({
         medication: {
           active: true,
           name: 'drugz'
         }
-      }
+      })
     };
   } catch (error) {
     console.log('err 500');
