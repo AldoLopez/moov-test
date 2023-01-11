@@ -4,9 +4,12 @@ const handler = async (event) => {
   try {
     console.log('getting meds');
     return {
-      medication: {
-        active: true,
-        name: 'drugz'
+      statusCode: 200,
+      body: {
+        medication: {
+          active: true,
+          name: 'drugz'
+        }
       }
     };
   } catch (error) {
